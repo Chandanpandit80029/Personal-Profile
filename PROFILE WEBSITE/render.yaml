@@ -1,28 +1,38 @@
+# Render Deployment Configuration
+# https://render.com/docs/deploy-config
+
 services:
-  - type: static_site
-    name: profile-website
+  - type: web
+    name: personal-profile
     env: static
     branch: main
     buildCommand: npm install && npm run build
-    publishPath: dist
+    staticPublishPath: dist
+    headers:
+      - path: /*
+        name: X-Frame-Options
+        value: DENY
+      - path: /*
+        name: X-Content-Type-Options
+        value: nosniff
     envVars:
       - key: VITE_FIREBASE_API_KEY
-        value: ""
+        sync: false
       - key: VITE_FIREBASE_AUTH_DOMAIN
-        value: ""
+        sync: false
       - key: VITE_FIREBASE_PROJECT_ID
-        value: ""
+        sync: false
       - key: VITE_FIREBASE_STORAGE_BUCKET
-        value: ""
+        sync: false
       - key: VITE_FIREBASE_MESSAGING_SENDER_ID
-        value: ""
+        sync: false
       - key: VITE_FIREBASE_APP_ID
-        value: ""
+        sync: false
       - key: VITE_CLOUDINARY_CLOUD_NAME
-        value: ""
+        sync: false
       - key: VITE_CLOUDINARY_UPLOAD_PRESET
-        value: ""
+        sync: false
       - key: VITE_CLOUDINARY_API_KEY
-        value: ""
+        sync: false
       - key: VITE_CLOUDINARY_API_SECRET
-        value: ""
+        sync: false
