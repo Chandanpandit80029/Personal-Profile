@@ -1,4 +1,4 @@
-git pushimport { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { FiPlus, FiEdit2, FiTrash2, FiX, FiStar, FiExternalLink, FiGithub } from 'react-icons/fi';
 import { firestoreService } from '../../services/firestoreService';
