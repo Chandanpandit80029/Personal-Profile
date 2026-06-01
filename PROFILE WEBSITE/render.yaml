@@ -1,0 +1,28 @@
+services:
+  - type: static_site
+    name: profile-website
+    env: static
+    branch: main
+    buildCommand: npm install && npm run build
+    publishPath: dist
+    envVars:
+      - key: VITE_FIREBASE_API_KEY
+        value: ""
+      - key: VITE_FIREBASE_AUTH_DOMAIN
+        value: ""
+      - key: VITE_FIREBASE_PROJECT_ID
+        value: ""
+      - key: VITE_FIREBASE_STORAGE_BUCKET
+        value: ""
+      - key: VITE_FIREBASE_MESSAGING_SENDER_ID
+        value: ""
+      - key: VITE_FIREBASE_APP_ID
+        value: ""
+      - key: VITE_CLOUDINARY_CLOUD_NAME
+        value: ""
+      - key: VITE_CLOUDINARY_UPLOAD_PRESET
+        value: ""
+      - key: VITE_CLOUDINARY_API_KEY
+        value: ""
+      - key: VITE_CLOUDINARY_API_SECRET
+        value: ""
